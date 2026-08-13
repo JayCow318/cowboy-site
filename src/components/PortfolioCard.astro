@@ -1,0 +1,95 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  tags?: string[];
+  url?: string;
+  image?: string;
+}
+
+const { title, description, tags = [], url, image } = Astro.props;
+---
+
+<article class="card portfolio-card">
+  {image && (
+    <div class="portfolio-image">
+      <img src={image} alt={title} loading="lazy" />
+    </div>
+  )}
+  <div class="portfolio-body">
+    <h3 class="portfolio-title">{title}</h3>
+    <p class="portfolio-desc">{description}</p>
+    {tags.length > 0 && (
+      <div class="portfolio-tags">
+        {tags.map(tag => <span class="tag">{tag}</span>)}
+      </div>
+    )}
+    {url && (
+      <a href={url} class="portfolio-link" target="_blank" rel="noopener noreferrer">
+        View project →
+      </a>
+    )}
+  </div>
+</article>
+
+<style>
+  .portfolio-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .portfolio-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 400ms ease;
+  }
+
+  .portfolio-card:hover .portfolio-image img {
+    transform: scale(1.05);
+  }
+
+  .portfolio-body {
+    padding: var(--space-lg);
+  }
+
+  .portfolio-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+    transition: color var(--transition);
+  }
+
+  .portfolio-card:hover .portfolio-title {
+    color: var(--accent);
+  }
+
+  .portfolio-desc {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .portfolio-tags {
+    display: flex;
+    gap: 0.375rem;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+  }
+
+  .portfolio-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+</style>

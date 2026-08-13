@@ -1,0 +1,14 @@
+{
+  "name": "cowboy-site",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Cowboy's personal blog & portfolio",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

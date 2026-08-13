@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const posts = [
+  {
+    title: 'Welcome to My Corner of the Web',
+    excerpt: 'Starting a new journey — sharing thoughts, projects, and lessons learned along the way.',
+    date: '2026-08-13',
+    tags: ['meta', 'personal'],
+    url: '/blog/welcome-to-my-site',
+  },
+];
+---
+
+<BaseLayout title="Blog">
+  <Header />
+
+  <section class="section">
+    <div class="container">
+      <header class="page-header">
+        <h1 class="page-title">Blog</h1>
+        <p class="page-desc">Thoughts, notes, and stories from the trail.</p>
+      </header>
+
+      <div class="divider" />
+
+      {posts.length > 0 ? (
+        <div class="post-list">
+          {posts.map(post => <BlogCard {...post} />)}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>No posts yet. Stay tuned!</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-desc {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+  }
+
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: var(--space-3xl) 0;
+    color: var(--text-muted);
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 640px) {
+    .page-title { font-size: 1.875rem; }
+  }
+</style>

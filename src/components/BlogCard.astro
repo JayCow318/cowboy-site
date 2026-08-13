@@ -1,0 +1,89 @@
+---
+export interface Props {
+  title: string;
+  excerpt: string;
+  date: string;
+  tags?: string[];
+  url: string;
+}
+
+const { title, excerpt, date, tags = [], url } = Astro.props;
+---
+
+<article class="card blog-card">
+  <a href={url} class="blog-link">
+    <div class="blog-meta">
+      <time datetime={date} class="blog-date">{date}</time>
+      {tags.length > 0 && (
+        <div class="blog-tags">
+          {tags.map(tag => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+    </div>
+    <h3 class="blog-title">{title}</h3>
+    <p class="blog-excerpt">{excerpt}</p>
+    <span class="blog-readmore">Read more →</span>
+  </a>
+</article>
+
+<style>
+  .blog-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .blog-link {
+    display: block;
+    padding: var(--space-lg);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+    font-size: 0.875rem;
+  }
+
+  .blog-date {
+    color: var(--text-muted);
+    font-feature-settings: 'tnum';
+  }
+
+  .blog-tags {
+    display: flex;
+    gap: 0.375rem;
+    flex-wrap: wrap;
+  }
+
+  .blog-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+    transition: color var(--transition);
+  }
+
+  .blog-card:hover .blog-title {
+    color: var(--accent);
+  }
+
+  .blog-excerpt {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .blog-readmore {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+</style>
