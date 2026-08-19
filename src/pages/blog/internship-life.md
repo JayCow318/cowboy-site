@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+layout: ../../layouts/BlogPost.astro
 title: "我的實習生活"
 description: "記錄一下這段時間的實習心得與日常"
 pubDate: 2026-08-17

@@ -1,0 +1,45 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Comments from '../components/Comments.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <header class="blog-header">
+    <nav class="container">
+      <a href="/" class="blog-back">← Home</a>
+    </nav>
+  </header>
+
+  <article class="blog-article">
+    <slot />
+  </article>
+
+  <Comments />
+</BaseLayout>
+
+<style>
+  .blog-header {
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: var(--space-xl);
+  }
+
+  .blog-back {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+
+  .blog-back:hover {
+    color: var(--accent);
+  }
+</style>

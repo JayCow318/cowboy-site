@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+layout: ../../layouts/BlogPost.astro
 title: "Welcome to My Corner of the Web"
 description: "Starting a new journey — sharing thoughts, projects, and lessons learned along the way."
 pubDate: 2026-08-13
