@@ -32,14 +32,14 @@ const featuredProjects = [
 ];
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="首頁">
   <Header />
 
   <!-- Hero -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p class="hero-greeting">Howdy, I'm</p>
+        <p class="hero-greeting">嗨，我是</p>
         <h1 class="hero-name">
           Cowboy
           <span class="hero-wave">🤠</span>
@@ -48,11 +48,11 @@ const featuredProjects = [
           Hello everyone I'm Jay!
         </p>
         <p class="hero-desc">
-          Welcome to my corner of the web. I write about code, design, and the things I'm building.
+          歡迎來到我的網站。這裡記錄了我的學習、專案與生活分享。
         </p>
         <div class="hero-actions">
-          <a href="/blog" class="btn btn-primary">Read the Blog</a>
-          <a href="/portfolio" class="btn btn-outline">View My Work</a>
+          <a href="/blog" class="btn btn-primary">閱讀部落格</a>
+          <a href="/portfolio" class="btn btn-outline">看看作品</a>
         </div>
       </div>
     </div>
@@ -61,14 +61,14 @@ const featuredProjects = [
   <!-- Featured Blog Posts -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Latest Posts</h2>
+      <h2 class="section-title">最新文章</h2>
       <div class="post-list">
         {featuredPosts.map(post => (
           <BlogCard {...post} />
         ))}
       </div>
       <div class="section-footer">
-        <a href="/blog" class="btn btn-outline">All Posts →</a>
+        <a href="/blog" class="btn btn-outline">所有文章 →</a>
       </div>
     </div>
   </section>
@@ -76,14 +76,14 @@ const featuredProjects = [
   <!-- Featured Projects -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
+      <h2 class="section-title">精選作品</h2>
       <div class="project-grid">
         {featuredProjects.map(project => (
           <PortfolioCard {...project} />
         ))}
       </div>
       <div class="section-footer">
-        <a href="/portfolio" class="btn btn-outline">All Projects →</a>
+        <a href="/portfolio" class="btn btn-outline">所有作品 →</a>
       </div>
     </div>
   </section>
