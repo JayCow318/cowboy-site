@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '../components/Analytics.astro';
 
 export interface Props {
   title: string;
@@ -15,7 +16,7 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description ?? "Cowboy's personal blog and portfolio"} />
-    <meta name="theme-color" content="#b5653e" />
+    <meta name="theme-color" content="#2c6e9e" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} — Cowboy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,6 +25,7 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <slot />
+    <Analytics />
     <script>
       // Dark mode toggle
       const stored = localStorage.getItem('theme');

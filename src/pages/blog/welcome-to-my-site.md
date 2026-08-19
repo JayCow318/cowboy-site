@@ -4,6 +4,7 @@ title: "Welcome to My Corner of the Web"
 description: "Starting a new journey — sharing thoughts, projects, and lessons learned along the way."
 pubDate: 2026-08-13
 tags: ["meta", "personal"]
+image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&h=400&fit=crop"
 ---
 
 <div class="prose" style="max-width: 720px; margin: 0 auto; padding-top: 2rem;">

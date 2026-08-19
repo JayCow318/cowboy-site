@@ -4,6 +4,7 @@ title: "我的實習生活"
 description: "記錄一下這段時間的實習心得與日常"
 pubDate: 2026-08-17
 tags: ["實習", "生活", "心得"]
+image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&h=400&fit=crop"
 ---
 
 <div class="prose" style="max-width: 720px; margin: 0 auto; padding-top: 2rem;">
